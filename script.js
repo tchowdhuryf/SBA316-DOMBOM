@@ -79,7 +79,7 @@ nameForm.addEventListener("submit", function (event) {
 
 const resetButton = document.createElement("button");
 resetButton.textContent = "Reset Game";
-document.body.appendChild(resetButton);
+document.querySelector(".container").appendChild(resetButton);
 
 resetButton.addEventListener("click", function () {
   location.reload(); //reloads the page
