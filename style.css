@@ -10,7 +10,28 @@ body {
   display: flex;
   flex-direction: column;
   background: #0077b6;
+  color: whitesmoke;
+}
+
+button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #00b4d8;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  transition: background-color 0.3s;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+  margin-right: 10px;
+  border: 2px solid #00b4d8;
+  border-radius: 5px;
   color: black;
+  background-color: whitesmoke;
 }
 
 .container {
@@ -70,7 +91,8 @@ form {
   margin-bottom: 20px;
 }
 
-#score{
+#score {
   font-size: 18px;
   margin: 10px;
 }
+

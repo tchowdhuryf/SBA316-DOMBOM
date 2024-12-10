@@ -54,7 +54,7 @@ function checkForMatch() {
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-//form doesn't hide with 3 letter names
+//have to click start game twice for it to hide
 nameForm.addEventListener("submit", function (event) {
   event.preventDefault();
   if (playerName.value.length >= 3) {
@@ -75,4 +75,12 @@ nameForm.addEventListener("submit", function (event) {
   } else {
     alert("Please enter a name with at least 3 characters.");
   }
+});
+
+const resetButton = document.createElement("button");
+resetButton.textContent = "Reset Game";
+document.body.appendChild(resetButton);
+
+resetButton.addEventListener("click", function () {
+  location.reload(); //reloads the page
 });
