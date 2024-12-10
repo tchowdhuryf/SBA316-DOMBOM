@@ -1,10 +1,13 @@
 const cards = document.querySelectorAll(".card");
 const nameForm = document.querySelector("#nameForm");
 const playerName = document.querySelector("#playerName");
+const scoreContainer = document.getElementById("score-container");
+const score = document.getElementById("score");
 
 let cardFlipped = false;
 let lockBoard = false;
 let card1, card2;
+let trackScore = 0;
 
 function flipCard() {
   if (lockBoard) return;
@@ -22,10 +25,16 @@ function flipCard() {
   }
 }
 
+function updateScore() {
+  score.textContent = `Score: ${trackScore}`;
+}
+
 function checkForMatch() {
   if (card1.dataset.img === card2.dataset.img) {
     card1.removeEventListener("click", flipCard);
     card2.removeEventListener("click", flipCard);
+    trackScore++;
+    updateScore();
   } else {
     lockBoard = true;
     setTimeout(() => {
@@ -45,7 +54,7 @@ function checkForMatch() {
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-//form doesn't hide in 3 letter names 
+//form doesn't hide with 3 letter names
 nameForm.addEventListener("submit", function (event) {
   event.preventDefault();
   if (playerName.value.length >= 3) {
