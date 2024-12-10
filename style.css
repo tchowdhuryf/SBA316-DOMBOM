@@ -27,7 +27,13 @@ body {
   height: calc(33.33% - 8px);
   margin: 4px;
   position: relative;
+  transform: scale(1);
 }
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
 
 .card-front,
 .card-back {
