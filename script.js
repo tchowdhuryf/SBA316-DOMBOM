@@ -1,4 +1,6 @@
 const cards = document.querySelectorAll(".card");
+const nameForm = document.querySelector("#nameForm");
+const playerName = document.querySelector("#playerName");
 
 let cardFlipped = false;
 let lockBoard = false;
@@ -42,3 +44,26 @@ function checkForMatch() {
 })();
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+//form doesn't hide in 3 letter names 
+nameForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (playerName.value.length >= 3) {
+    const messageBox = document.getElementById("welcome-message");
+
+    if (!messageBox) {
+      const newMessageBox = document.createElement("div");
+      newMessageBox.id = "welcome-message";
+      document.body.appendChild(newMessageBox);
+    }
+
+    document.getElementById(
+      "welcome-message"
+    ).innerText = `Welcome, ${playerName.value}!`;
+
+    messageBox.style.display = "block";
+    nameForm.style.display = "none";
+  } else {
+    alert("Please enter a name with at least 3 characters.");
+  }
+});
