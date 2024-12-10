@@ -63,15 +63,16 @@ nameForm.addEventListener("submit", function (event) {
     if (!messageBox) {
       const newMessageBox = document.createElement("div");
       newMessageBox.id = "welcome-message";
-      document.body.appendChild(newMessageBox);
+      document.querySelector(".container").appendChild(newMessageBox);
     }
+
+    nameForm.style.display = "none";
 
     document.getElementById(
       "welcome-message"
     ).innerText = `Welcome, ${playerName.value}!`;
 
     messageBox.style.display = "block";
-    nameForm.style.display = "none";
   } else {
     alert("Please enter a name with at least 3 characters.");
   }
