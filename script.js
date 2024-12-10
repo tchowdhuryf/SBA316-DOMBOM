@@ -30,7 +30,7 @@ function updateScore() {
 }
 
 function checkForMatch() {
-  if (card1.dataset.img === card2.dataset.img) {
+  if (card1.dataset.img === card2.dataset.img && card1.id !== card2.id) {
     card1.removeEventListener("click", flipCard);
     card2.removeEventListener("click", flipCard);
     trackScore++;
