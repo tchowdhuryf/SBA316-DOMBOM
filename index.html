@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class ="container">
     <div class="game">
       <div class="card" data-img="charmander">
         <img class="card-front" src="images/Charmander.png" alt="Charmander" />
@@ -57,6 +58,22 @@
         <img class="card-back" src="images/pokeball.png" alt="Pokeball" />
       </div>
     </div>
+
+    <div id="score-container">
+      <span id="score">Score: 0</span>
+    </div>
+
+    <form id="nameForm">
+      <label for="playerName">Enter your name: </label>
+      <input
+        type="text"
+        id="playerName"
+        name="playerName"
+        required
+        minlength="3" />
+      <button type="submit">Start Game</button>
+    </form>
+  </div>
 
     <script src="script.js"></script>
   </body>
