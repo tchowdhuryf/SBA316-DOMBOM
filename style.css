@@ -105,3 +105,22 @@ form {
   font-size: 18px;
   margin: 10px;
 }
+
+#playPauseButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #b8b8ff;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  transition: background-color 0.3s;
+}
+
+#playPauseButton:hover {
+  background-color: #7364c9;
+}
+
+#game-menu {
+  display: flex;
+  gap: 10px;
+}

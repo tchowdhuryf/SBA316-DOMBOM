@@ -4,11 +4,32 @@ const playerName = document.querySelector("#playerName");
 const scoreContainer = document.getElementById("score-container");
 const score = document.getElementById("score");
 const container = document.querySelector(".container");
+const gameAudio = document.getElementById('gameAudio');
+const playPauseButton = document.getElementById('playPauseButton');
+const gameMenu = document.getElementById('game-menu');
 
 let cardFlipped = false;
 let lockBoard = false;
 let card1, card2;
 let trackScore = 0;
+
+gameAudio.volume = 0.2;
+gameAudio.loop = true;
+
+function toggleAudio() {
+  if (gameAudio.paused) {
+    gameAudio.play().then(() => {
+      playPauseButton.textContent = 'Pause Music';
+    }).catch((error) => {
+      console.error("Audio play failed:", error);
+    });
+  } else {
+    gameAudio.pause();
+    playPauseButton.textContent = 'Play Music';
+  }
+}
+
+playPauseButton.addEventListener('click', toggleAudio);
 
 function flipCard() {
   if (lockBoard) return;
@@ -75,7 +96,7 @@ nameForm.addEventListener("submit", function (event) {
 
 const resetButton = document.createElement("button");
 resetButton.textContent = "Reset Game";
-container.appendChild(resetButton);
+gameMenu.appendChild(resetButton);
 
 resetButton.addEventListener("click", function () {
   location.reload(); //reloads the page
