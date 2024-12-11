@@ -4,19 +4,25 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 40px;
+  text-align: center;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #0077b6;
+  background: #9381ff;
   color: whitesmoke;
 }
 
 button {
   padding: 8px 15px;
   font-size: 16px;
-  background-color: #00b4d8;
+  background-color: #b8b8ff;
   border: none;
   border-radius: 5px;
   color: whitesmoke;
@@ -28,7 +34,7 @@ input {
   font-size: 16px;
   width: 200px;
   margin-right: 10px;
-  border: 2px solid #00b4d8;
+  border: 2px solid #b8b8ff;
   border-radius: 5px;
   color: black;
   background-color: whitesmoke;
@@ -78,7 +84,7 @@ input {
   border-radius: 8px;
   position: absolute;
   border: 2px;
-  background: #00b4d8;
+  background: #b8b8ff;
   backface-visibility: hidden;
 }
 
@@ -88,10 +94,6 @@ input {
 
 form {
   margin: 20px 0;
-}
-
-#score-container {
-  margin-bottom: 20px;
 }
 
 #score {

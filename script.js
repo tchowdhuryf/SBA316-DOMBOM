@@ -3,6 +3,7 @@ const nameForm = document.querySelector("#nameForm");
 const playerName = document.querySelector("#playerName");
 const scoreContainer = document.getElementById("score-container");
 const score = document.getElementById("score");
+const container = document.querySelector(".container");
 
 let cardFlipped = false;
 let lockBoard = false;
@@ -63,15 +64,10 @@ nameForm.addEventListener("submit", function (event) {
     if (!messageBox) {
       const newMessageBox = document.createElement("div");
       newMessageBox.id = "welcome-message";
-      document.querySelector(".container").appendChild(newMessageBox);
+      container.appendChild(newMessageBox);
     }
 
-    nameForm.style.display = "none";
-
-    document.getElementById(
-      "welcome-message"
-    ).innerText = `Welcome, ${playerName.value}!`;
-
+    nameForm.innerHTML = `Welcome, ${playerName.value}!`;
     messageBox.style.display = "block";
   } else {
     alert("Please enter a name with at least 3 characters.");
@@ -80,8 +76,20 @@ nameForm.addEventListener("submit", function (event) {
 
 const resetButton = document.createElement("button");
 resetButton.textContent = "Reset Game";
-document.querySelector(".container").appendChild(resetButton);
+container.appendChild(resetButton);
 
 resetButton.addEventListener("click", function () {
   location.reload(); //reloads the page
 });
+
+function displayWindowHeight() {
+  const height = innerHeight;
+  const innerHeightDisplay = document.createElement("div");
+  innerHeightDisplay.id = "height-display";
+  container.appendChild(innerHeightDisplay);
+
+  innerHeightDisplay.textContent = `Window's Inner Height: ${height}px`;
+  innerHeightDisplay.style.marginTop = "15px";
+}
+
+displayWindowHeight();
