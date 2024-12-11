@@ -55,7 +55,6 @@ function checkForMatch() {
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-//have to click start game twice for it to hide
 nameForm.addEventListener("submit", function (event) {
   event.preventDefault();
   if (playerName.value.length >= 3) {
@@ -68,7 +67,7 @@ nameForm.addEventListener("submit", function (event) {
     }
 
     nameForm.innerHTML = `Welcome, ${playerName.value}!`;
-    messageBox.style.display = "block";
+    // messageBox.style.display = "block";
   } else {
     alert("Please enter a name with at least 3 characters.");
   }
