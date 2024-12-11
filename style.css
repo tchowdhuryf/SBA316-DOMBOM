@@ -29,6 +29,10 @@ button {
   transition: background-color 0.3s;
 }
 
+button:hover {
+  background-color: #7364c9;
+}
+
 input {
   padding: 8px;
   font-size: 16px;
